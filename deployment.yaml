@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nestjs
+  labels:
+    app: nestjs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nestjs
+  template:
+    metadata:
+      labels:
+        app: nestjs
+    spec:
+      containers:
+        - name: nestjs
+          image: nestjs-prisma:local-1
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3000
+          env:
+            # set your DATABASE_URL here (example for sqlite demo)
+            - name: DATABASE_URL
+              value: "file:./dev.db"
+          # If you want to use sqlite file persisted you can add a volumeMount and PV later
