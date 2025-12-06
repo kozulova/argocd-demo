@@ -14,6 +14,7 @@ spec:
       labels:
         app: nestjs
     spec:
+      serviceAccountName: nestjs-sa
       containers:
         - name: nestjs
           image: nestjs-prisma:local-1
