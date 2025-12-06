@@ -5,4 +5,3 @@ resources:
   - nestjs-app/deployment.yaml
   - nestjs-app/service.yaml
   - nestjs-app/ingress.yaml
-  - job/job.yaml
