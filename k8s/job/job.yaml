@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: nestjs-job
+spec:
+  template:
+    spec:
+      serviceAccountName: nestjs-sa
+      containers:
+        - name: nestjs-job
+          image: nestjs-job:1.0
+      restartPolicy: Never
+  backoffLimit: 2

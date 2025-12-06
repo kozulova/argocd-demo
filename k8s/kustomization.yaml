@@ -1,0 +1,8 @@
+resources:
+  - rbac/serviceaccount.yaml
+  - rbac/role.yaml
+  - rbac/rolebinding.yaml
+  - nestjs/deployment.yaml
+  - nestjs/service.yaml
+  - nestjs/ingress.yaml
+  - job/job.yaml
