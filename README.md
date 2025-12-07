@@ -226,3 +226,69 @@ kubectl get pods -w
 ```bash
 kubectl get all -n my-namespace
 ```
+
+---
+
+## 📌 11. Argo CD Useful Commands
+
+### Log in to Argo CD CLI
+
+```bash
+argocd login <ARGO_SERVER> --username admin --password <PASSWORD>
+```
+
+### List applications
+
+```bash
+argocd app list
+```
+
+### Get application details
+
+```bash
+argocd app get <app-name>
+```
+
+### Sync an application (deploy changes)
+
+```bash
+argocd app sync <app-name>
+```
+
+### Sync with prune
+
+```bash
+argocd app sync <app-name> --prune
+```
+
+### Refresh application state
+
+```bash
+argocd app refresh <app-name>
+```
+
+### Rollback to previous revision
+
+```bash
+argocd app rollback <app-name>
+```
+
+### Delete application
+
+```bash
+argocd app delete <app-name>
+```
+
+### Check Argo CD version
+
+```bash
+argocd version
+```
+
+### Port-forward Argo CD UI (if not using LoadBalancer)
+
+```bash
+kubectl port-forward svc/argocd-server -n argocd 8080:443
+```
+
+Then open: [https://localhost:8080](https://localhost:8080)
