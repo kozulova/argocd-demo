@@ -21,5 +21,9 @@ export class AppController {
       message: 'Job triggered successfully',
       jobName: job.metadata?.name,
     };
+
+    // return this.jobService.runPredefinedJob();
+
+    /*    return this.jobService.runJobFromTemplate(); */
   }
 }
